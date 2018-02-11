@@ -4,11 +4,9 @@ import "basscss/css/basscss.css";
 import "flexboxgrid";
 import './index.scss';
 
-import DevTools from 'mobx-react-devtools'
 import registerServiceWorker from './registerServiceWorker';
-import memoryGameStore from './memoryGameStore'
-import MemoryGame from "./MemoryGame";
 import theme from './theme'
+import App from './app'
 
 // material ui
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -16,13 +14,11 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 ReactDOM.render(
   <MuiThemeProvider muiTheme={theme}>
     <div className="app">
-      <MemoryGame store={memoryGameStore} />
-      <DevTools />
+      <App/>
     </div>
   </MuiThemeProvider>,
   document.getElementById("root")
 );
 
-// ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
 
